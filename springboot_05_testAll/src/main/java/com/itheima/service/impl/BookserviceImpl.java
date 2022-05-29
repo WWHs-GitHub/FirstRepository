@@ -1,0 +1,52 @@
+package com.itheima.service.impl;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.itheima.dao.BookDao;
+import com.itheima.domain.Book;
+import com.itheima.service.Bookservice;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class BookserviceImpl implements Bookservice {
+
+    @Autowired
+    private BookDao bookDao;
+
+    @Override
+    public Boolean save(Book book) {
+        return bookDao.insert(book)>0;
+    }
+
+    @Override
+    public Boolean update(Book book) {
+
+        return bookDao.updateById(book)>0;
+    }
+
+    @Override
+    public Boolean delete(Integer id) {
+//        Book book=new Book();
+//        book.setId(24);
+        return bookDao.deleteById(id)>0;
+    }
+
+    @Override
+    public Book selectById(Integer id) {
+        return bookDao.selectById(id);
+    }
+
+    @Override
+    public List<Book> selectAll() {
+        return bookDao.selectList(null);
+    }
+
+    @Override
+    public IPage<Book> selectPage(int current,int size) {
+        IPage<Book> page=new Page<>(current,size);
+        return bookDao.selectPage(page,null);
+    }
+}

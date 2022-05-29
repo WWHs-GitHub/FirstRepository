@@ -1,0 +1,11 @@
+com\itheima\Springboot05TestAllApplication.class
+com\itheima\controller\utils\R.class
+com\itheima\service\Bookservice.class
+com\itheima\config\interceptor.class
+com\itheima\service\impl\BookserviceImpl.class
+com\itheima\service\impl\IBookServiceImpl.class
+com\itheima\dao\BookDao.class
+com\itheima\domain\Book.class
+com\itheima\service\IBookService.class
+com\itheima\controller\restcontrol.class
+com\itheima\controller\ProjectExceptionAdvice.class
